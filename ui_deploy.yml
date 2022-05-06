@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: iaccess
+  labels:
+    app: iaccess
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: iaccess
+  template:
+    metadata:
+      labels:
+        app: iaccess
+    spec:
+      containers:
+        - name: iaccess
+          image: pbeniwal/iaccess:latest
+          ports:
+            - containerPort: 5000
+          imagePullPolicy: Always
+

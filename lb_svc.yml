@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: iaccess-svc
+spec:
+  selector:
+    app: iaccess
+  ports:
+    - port: 80
+      targetPort: 5000
+  type: LoadBalancer
+
